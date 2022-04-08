@@ -1,0 +1,2 @@
+# SQLServerAdmin
+NeedToKnowCommands
