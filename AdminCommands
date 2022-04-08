@@ -1,0 +1,57 @@
+Admin commands for SQL Server
+
+To Free unnecessary memory usage from DLL (stored procedures)
+DBCC dllname (FREE)
+
+Checking table pages
+USE DATABASENAME  
+DBCC CHECKTABLE (‘TABLENAME’)
+
+Checking table´s integrity
+USE DATABASENAME  
+DBCC CHECKIDENT (‘TABLENAME’) 
+
+Checking table´s detailed description
+USE MASTER  
+DBCC CHECKDB (‘DATABASENAME’) 
+
+Checking database´s allocation, tables, rows, indexes, views
+USE MASTER  
+DBCC CHECKFILEGROUP (‘DATABASENAME’) 
+
+Checking allocation and disk space of that database.
+USE MASTER  
+DBCC CHECKALLOC (‘DATABASENAME’)
+
+Checking which query is running and SPID of that query.
+USE MASTER  
+DBCC INPUTBUFFER (‘DATABASENAME’)
+
+Emptying the table
+DBCC CLEANTABLE(DATABASENAME,’TABLENAME’,0)
+
+Removing all buffers from the pool
+DBCC DROPCLEANBUFFERS
+
+Deleting all the elements in procedure cache
+DBCC FREEPROCCACHE
+
+Checking log size of each database and log space used
+DBCC SQLPERF(LOGSPACE)
+
+Checking open transactions in DB
+DBCC OPENTRAN
+
+Rebuilding indexes for a table in the specified database
+DBCC DBREINDEX
+
+Defragmenting indexes of the specified table
+DBCC INDEXDEFRAG
+
+Starting UPDATE STATISTICS to all internal tables in the current database
+sp_updatestats
+
+Closing the error log file and getting the error log extension numbers when server restarts
+sp_cycle_errorlog 
+or 
+DBCC ERRORLOG
